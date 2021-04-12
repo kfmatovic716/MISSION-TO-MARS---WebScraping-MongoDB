@@ -1,1 +1,98 @@
 <!-- Create a landing page for your app, using Jinja to insert data from your database -->
+<!DOCTYPE html>
+<html lang="en">
+    <style>
+        h1 {text-align: left;}
+    </style>
+<head>
+    <meta charset="UTF-8">
+    <title> Mission to Mars - Web Scraping & Mongo DB</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"  crossorigin="anonymous">
+
+</head>
+<body>
+    <div class="jumbotron text-left" style= "background: url('https://www.enjpg.com/img/2020/outer-space-background-8.jpg');
+    background-size: cover; color: burlywood">
+        <h1 class="display-4"><strong>Mission to Mars</strong></h1>
+      </div>
+
+    <blockquote class="blockquote left-right card shadow shadow px-3 py-3">
+
+        <div class = "col-md-12">
+            <h2>Latest Mars News</h2>
+            <h5>{{ mars.news_title }}</h5>
+            <p>{{ mars.news_paragraph }}</p>
+        </div>
+    </blockquote>
+
+
+    <div class = "row">
+        
+        <!-- Mars Featured Image -->
+        <div class = "col-md-7">
+            <div class="col-md-12">
+                <h2>Featured Mars Image</h2>
+                <img src = "{{  mars.mars_img  }}", alt="Mars Image" >
+            </div>
+        </div>
+
+        <!-- Mars Weather -->
+
+        <div class = "col-md-5">
+            <div class="col-md-12">
+                <blockquote class="blockquote left-right card shadow shadow px-3 py-3">
+                    <h3>Current Weather on Mars</h3>
+                    <p>{{  mars.mars_weather  }}</p>
+                    <br>
+                </blockquote>
+
+            </div>
+        <!-- Mars Facts -->
+            <div class="col-md-12">
+                <h3>Mars Facts</h3>
+                <p>{{  mars.mars_facts | safe}}</p>
+            </div>   
+        </div>
+    </div>
+
+    <!-- Mars Hemispheres -->
+<!--
+    <div class = "col-md-12">
+        <h2>Mars Hemispheres</h2>
+        {% for hemisphere in mars.mars_hemisphere %}
+            <div class="col-md-6">
+                <img src="{{ hemisphere.img_url }}">
+                <h3> {{ hemisphere.title }}</h3>
+            </div>
+        {% endfor %}
+    </div>
+-->
+<br>
+<br>
+    <blockquote class="blockquote left-right card shadow shadow px-3 py-3">
+
+        <section id="gallery" >
+            <div class="container">
+                <h2 class="text-center">Mars Hemispheres</h2>
+                <div class="row car-deck ">
+                    {% for hemisphere in mars.mars_hemisphere %}
+                    <div class="col-sm-12 col-lg-6 mb-6">
+                        <div class="card" >
+                            <img class="card-img-top" src="{{ hemisphere.img_url }}" alt="Mars Hemisphere">
+                            <div class="card-body">
+                                <p class="card-title text-center ">{{ hemisphere.title }}</p>
+                            </div>
+                        </div>   
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </section>
+    </blockquote>
+
+
+</body>
+
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+
+</html>
