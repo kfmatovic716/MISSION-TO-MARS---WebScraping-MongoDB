@@ -1,5 +1,5 @@
 # Mission-to-Mars - A Web Scraping Adventure
-<img src="mission_to_mars.png"/>
+![](https://github.com/kfmatovic716/Webscraping-Mission-to-Mars/blob/main/images/mission_to_mars.png?raw=true)
 
 ## Objectives:
 <ol>

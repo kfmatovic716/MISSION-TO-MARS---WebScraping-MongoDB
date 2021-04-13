@@ -14,9 +14,9 @@ mongo = PyMongo(app)
 @app.route("/")
 def index():
     mars = mongo.db.mars.find_one()
-    return render_template("index.html", mars=mars)
+    return render_template("index.html", planet_mars=mars)
 
-# '/scrape' route that will create the mars collection, run scrape() function from scrape_mars, and update the mars collection in the database
+# '/scrape' route that will create the mars collection, run scrape() function from scrape_mars, and update the planet mars collection in the database
 # The route redirects back to the base route '/' with a code 302.
 @app.route("/scrape")
 def scrape():
