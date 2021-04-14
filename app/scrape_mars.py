@@ -68,7 +68,7 @@ def mars_facts(browser_exec):
     rawdata_mars = pd.read_html(url_mars)[1]
     mars_df = rawdata_mars.rename(columns= {'Mars - Earth Comparison': 'Attributes'}).drop(columns = ["Earth"])
 
-    mars_html_table = mars_df.to_html(index=False)
+    mars_html_table = mars_df.to_html(header=False, index=False)
 
     return mars_html_table
 
