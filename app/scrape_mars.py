@@ -18,7 +18,7 @@ def scrape():
     mars_data['news_paragraph'] = news_output[1]
     mars_data['image'] = mars_image(browser_exec)
     mars_data['facts'] = mars_facts(browser_exec)
-    mars_data['hemisphere'] = mars_hemispheres(browser_exec)
+    mars_data['hemis'] = mars_hemispheres(browser_exec)
     return mars_data
 
 # Scrapes NASA Mars News Site
@@ -90,6 +90,7 @@ def mars_hemispheres(browser_exec):
     hem_img_urls = []
     for hem_img in results:
         hem_dict = {}
+        img_title = hem_img.find('h3').text
 
         href = hem_img.find('a', class_='itemLink product-item')
         link = base_url + href['href']
@@ -108,5 +109,6 @@ def mars_hemispheres(browser_exec):
         
         # Append dictionary to list
         hem_img_urls.append(hem_dict)
+        
 
         return hem_img_urls
