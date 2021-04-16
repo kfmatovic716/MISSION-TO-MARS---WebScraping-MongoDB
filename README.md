@@ -28,3 +28,6 @@
         </ul>
     <li>index.html - an html file using Jinja templating that will take the mars data dictionary and display all of the data in the appropriate HTML elements</li>
 </ul>
+
+![](images/final_app1.png)
+![](images/final_app2.png)

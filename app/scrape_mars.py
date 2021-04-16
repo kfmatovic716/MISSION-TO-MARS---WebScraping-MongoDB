@@ -80,35 +80,32 @@ def mars_hemispheres(browser_exec):
     url_hemisphere = "https://astrogeology.usgs.gov/search/results?q=hemisphere+enhanced&k1=target&v1=Mars"
     browser_exec.visit(url_hemisphere) 
 
-    time.sleep(5)
+    time.sleep(1)
 
-    html = browser_exec.html
-    hem_soup = BeautifulSoup(html, "html.parser")
-
-    results = hem_soup.find_all('div', class_="item")
+    hem_html = browser_exec.html
+    hem_soup = BeautifulSoup(hem_html, "html.parser")
 
     hem_img_urls = []
-    for hem_img in results:
-        hem_dict = {}
-        img_title = hem_img.find('h3').text
+    image_titles = hem_soup.findAll('h3')
 
-        href = hem_img.find('a', class_='itemLink product-item')
-        link = base_url + href['href']
-        browser_exec.visit(link)
+    for i in range(len(image_titles)):
+        hemisphere = {}
         
-        time.sleep(5)
+        img_title = hem_soup.findAll('h3')[i].text
         
-        hem_html2 = browser_exec.html
-        hem_soup2 = BeautifulSoup(hem_html2, 'html.parser')
-        
-        img_title = hem_soup2.find('div', class_='content').find('h2', class_='title').text
-        hem_dict['title'] = img_title
-        
-        img_url = hem_soup2.find('div', class_='downloads').find('a')['href']
-        hem_dict['url_img'] = img_url
-        
-        # Append dictionary to list
-        hem_img_urls.append(hem_dict)
-        
+        img_url = base_url + hem_soup.findAll('a', class_='itemLink product-item')[i]['href']
+        browser_exec.visit(img_url)
 
-        return hem_img_urls
+        time.sleep(1)
+
+        html = browser_exec.html
+        soup = BeautifulSoup(html, 'html.parser')
+
+        final_img_url = soup.find('div', class_='downloads').find('a')['href']
+        
+        hemisphere["title"] = img_title
+        hemisphere["img_url"] = final_img_url
+        
+        hem_img_urls.append(hemisphere)    
+
+    return hem_img_urls
