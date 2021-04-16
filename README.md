@@ -31,4 +31,7 @@
 
 ![](https://github.com/kfmatovic716/Webscraping-MongoDB-Mission-to-Mars/blob/main/images/final_app1.PNG?raw=true)
 ![](https://github.com/kfmatovic716/Webscraping-MongoDB-Mission-to-Mars/blob/main/images/final_app2.PNG?raw=true)
+<<<<<<< HEAD
 ![](https://github.com/kfmatovic716/Webscraping-MongoDB-Mission-to-Mars/blob/main/images/final_app3.PNG?raw=true)
+=======
+>>>>>>> a8ba8cf55e256fbcec5ea47a4f53b0dc6a62a05c
