@@ -29,5 +29,6 @@
     <li>index.html - an html file using Jinja templating that will take the mars data dictionary and display all of the data in the appropriate HTML elements</li>
 </ul>
 
-![](https://github.com/kfmatovic716/Webscraping-Mission-to-Mars/blob/main/images/final_app1.png?raw=true)
-![](https://github.com/kfmatovic716/Webscraping-Mission-to-Mars/blob/main/images/final_app2.png?raw=true)
+![](https://github.com/kfmatovic716/Webscraping-MongoDB-Mission-to-Mars/blob/main/images/final_app1.PNG?raw=true)
+![](https://github.com/kfmatovic716/Webscraping-MongoDB-Mission-to-Mars/blob/main/images/final_app2.PNG?raw=true)
+![](https://github.com/kfmatovic716/Webscraping-MongoDB-Mission-to-Mars/blob/main/images/final_app3.PNG?raw=true)
