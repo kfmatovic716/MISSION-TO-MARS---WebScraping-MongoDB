@@ -3,8 +3,9 @@
 
 ## Objectives:
 <ol>
-    <li>To extract data via Web Scraping using Jupyter notebook, and Pandas, BeautifulSoup, & Splinter/Requests python libraries </li>
-    <li>To use MongoDB with Flask templating (Jinja) to create a new HTML page that displays all the scraped information </li>
+    <li>To build a web application that "srapes" data from various websites related to Mission to Mars and displays a summary output of all extracted data in an html landing page
+    <li>To extract data via Web Scraping using Jupyter notebook & utilizing BeautifulSoup, & Splinter/Requests python libraries to obtain data & clean data using Pandas library </li>
+    <li>To use MongoDB with Flask templating (Jinja) and create the HTML landing page to display summarized data </li>
 </ol>
 
 ## Web Scraping 
